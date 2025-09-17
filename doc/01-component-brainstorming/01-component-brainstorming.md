@@ -1,12 +1,11 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Henry Benner
+- **Dot Number**: benner.162
+- **Due Date**: 9/19 @12:40
 
 ## Assignment Overview
 
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,7 +28,7 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
+
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -52,7 +51,7 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
+
 
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
@@ -67,7 +66,6 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,15 +104,11 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+My main hobbies are weightlifting, traveling and cooking. In weightlifting I just hit 335 pounds on benchpress. For cooking, I make around 2 meals a day for myself. Lately I have been making chicken thighs with potatoes onions peaches and garlic in my cast iron pan about 3 times a week. This summer I went to Vietnam and Japan with my friend where we bought motorcycles for 250$ and drove them across the Country.
+This semester I am working two jobs, one at an afterschool STEM camp and the other as an intern at a local real estate firm.
 
 ## Assignment
 
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
@@ -122,7 +116,7 @@ that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
 
-<!-- TODO: browse the list of possible projects then delete this comment -->
+
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -132,7 +126,7 @@ you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
 
-<!-- TODO: review this example component then delete this comment -->
+
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,68 +194,105 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: RealEstateHomeTracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to track property listings in a local market. It manages a map from a unique listing id to a Home record. Secondary methods provide queries and analytics that real agents need, like filters, summaries, and simple stats.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addOrReplace(String id, Home h) inserts or replaces the listing
+      Pair<String, Home> removeAny() removes and returns an arbitrary listing
+      boolean has(String id) reports if id exists
+      Home value(String id) reports the listing, requires id exists
+      void clear() removes all listings
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - int size() total listings
+      boolean remove(String id) returns true if removed
+      Sequence<String> ids() all ids
+      Sequence<Home> filterByCity(String city)
+      Sequence<Home> filterByZip(String zip)
+      Sequence<Home> filterByPrice(int minInclusive, int maxInclusive)
+      Sequence<Home> filterByBeds(int minBeds)
+      Sequence<Home> filterByStatus(Status s)
+      Home cheapest()
+      Home mostExpensive()
+      double averagePrice()
+      double medianPrice()
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, it extends standard so they should all mutate this
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes it would need to record all the different qualities of the listing
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - maybe like ACTIVE PENDING SOLD, or constants like minPrice maxPrice etc.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Reads use has and value. Writes use addOrReplace and clear. Removal can be built with removeAny and transferFrom.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: MealTracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to track meals and their ingredients. Each meal has a name, list of ingredients, and nutritional qualities such as calories, protein, carbs, and fats.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addOrReplace(String mealId, Meal m)
+      Pair<String, Meal> removeAny()
+      boolean has(String mealId)
+      Meal value(String mealId)
+      void clear()
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - int size()
+      boolean remove(String mealId)
+      Sequence<String> ids()
+      Sequence<Meal> filterByIngredient(String ingredient)
+      Sequence<Meal> filterByCalories(int maxCalories)
+      double averageCalories()
+      Meal highestProteinMeal()
+      Meal lowestCarbMeal()
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Meals can be added, removed, or updated in place.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. A Meal record holding fields like name, ingredients, calories, protein, carbs, fats.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I dont know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, averageCalories iterates ids, and uses value to get each Meal.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: TripTracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to track activities during a trip and record how much they cost.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void add(String activityId, Activity a)
+      Pair<String, Activity> removeAny()
+      boolean has(String activityId)
+      Activity value(String activityId)
+      void clear()
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - boolean remove(String activityId)
+      Sequence<String> ids()
+      Sequence<Activity> filterByCategory(String category)
+      Sequence<Activity> filterByCost(int maxCost)
+      double totalCost()
+      double averageCost()
+      Activity mostExpensiveActivity()
+      Activity leastExpensiveActivity()
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Activities can be added, removed, or updated in place.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. An Activity record with fields such as name, category, cost, location, date.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I dont know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, totalCost iterates ids, calls value for each activity, and sums their costs.
 
 ## Post-Assignment
 
@@ -270,7 +301,7 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
+
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -309,7 +340,7 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
+
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -319,11 +350,11 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
+
 
 ### Peer Review
 
-<!-- TODO: review the peer review guidelines then delete this comment -->
+
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -350,7 +381,7 @@ If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
 
-<!-- TODO: follow the link to share your feedback then delete this comment -->
+
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
