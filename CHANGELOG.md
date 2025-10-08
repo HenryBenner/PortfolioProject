@@ -14,3 +14,12 @@ the following form: 2025.09.16.
 - Designed a realEstateHomeTracker component
 - Designed a mealTracker component
 - Designed a tripTracker component
+## 2025.10.06
+### Added
+Built RealEstateTrackerMVP single-file proof of concept
+
+Methods implemented: addProperty, updateRent, updateCurrentValue, recordIncome, recordExpense, portfolioNOIAnnual, portfolioEquity, printSummary
+
+Inner class Property with annualNOI, equity, capRatePercent, toString
+
+Demo main 
