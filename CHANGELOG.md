@@ -23,3 +23,13 @@ Methods implemented: addProperty, updateRent, updateCurrentValue, recordIncome, 
 Inner class Property with annualNOI, equity, capRatePercent, toString
 
 Demo main 
+## 2025.10.22
+### Added 
+RealEstateTracker
+RealEstateTrackerKernel
+RealEstateTrackerSecondary
+ReakEstateTracker1L
+
+Filled out RealEstateTracker
+
+Filled out RealEstateTrackerKernel
