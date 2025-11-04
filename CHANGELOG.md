@@ -23,3 +23,22 @@ Methods implemented: addProperty, updateRent, updateCurrentValue, recordIncome, 
 Inner class Property with annualNOI, equity, capRatePercent, toString
 
 Demo main 
+## 2025.10.20
+
+### Added
+
+- Designed interface class for RealEstateTrackerkernel component
+-Designed interface class for 
+
+### Updated
+
+- Things I needed to fix for component interfaces
+## 2025.11.04
+
+### Added
+
+- Designed abstract class for RealEstateTrackerSecondary component
+
+### Updated
+
+- Things I needed to fix for component interfaces
