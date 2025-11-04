@@ -131,16 +131,6 @@ public interface RealEstateTrackerKernel {
          *          this.rentMonthlyUSD = #this.rentMonthlyUSD
          */
         void setExpensesMonthlyUSD(double expenses);
-
-        /**
-         * Layered helper. Cashflow per month.
-         *
-         * @return rent minus expenses
-         * @ensures result = this.rentMonthlyUSD - this.expensesMonthlyUSD
-         */
-        default double monthlyCashflow() {
-            return this.rentMonthlyUSD() - this.expensesMonthlyUSD();
-        }
     }
 
     /**
@@ -150,14 +140,6 @@ public interface RealEstateTrackerKernel {
      * @ensures result.size() = 0
      */
     RealEstateTracker newInstance();
-
-    /**
-     * Clears this to the initial value.
-     *
-     * @updates this
-     * @ensures this.size() = 0
-     */
-    void clear();
 
     /**
      * Replaces this with source and clears source.
@@ -198,16 +180,6 @@ public interface RealEstateTrackerKernel {
      *          #this.value(k)
      */
     PropertyRecord remove(String id);
-
-    /**
-     * Reports presence of id.
-     *
-     * @param id
-     *            id to check
-     * @return true if present
-     * @ensures result = (id is in this.keys())
-     */
-    boolean hasKey(String id);
 
     /**
      * Returns the record at id.
